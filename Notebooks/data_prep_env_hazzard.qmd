@@ -1,0 +1,28 @@
+---
+title: "Data prep Env Hazards"
+format: html
+---
+
+# Setting up
+
+```{r}
+library(tidyverse)
+library(sf)
+```
+
+# Hum data
+
+<!-- had a look at /home/rushad/Documents/HIES/vignettes/hies2016_2016_mapping.rmd for using the mapping tool -->
+
+```{r}
+flood_shp <- "../Data/Raw/Hum-Data/bgd_nhr_floods_barc/bgd_nhr_floods_sparsso.shp"
+flood_sf <- read_sf(flood_shp) |> 
+                mutate(FLOODCAT_L=factor(FLOODCAT_L),
+                       FLOODCAT_L = fct_relevel(FLOODCAT_L, "Not Flood Prone") #bring not flood prone at the beginning
+                       )
+save(flood_shp, file = "../Data/Processed/flood_shp.rda")
+
+```
+
+
+

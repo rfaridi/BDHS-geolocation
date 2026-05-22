@@ -1,0 +1,14 @@
+Field,Label,Value
+created,Created,2017-03-08T09:56:33.370414
+description,Description,Drought risk by BARC - Drought class 1 to 10
+format,File Format,SHP
+download_url,Download URL,https://data.humdata.org/dataset/7362ef2d-7282-459f-bc1b-0347076fcc12/resource/8f974cee-89d9-4818-a05a-f0263f939923/download/bgd_nhr_drought_barc.zip
+id,Resource ID,8f974cee-89d9-4818-a05a-f0263f939923
+last_modified,Updated,2021-05-20T07:36:34.258864
+metadata_modified,Metadata Updated,2023-03-02T23:01:02.737258
+microdata,Microdata,False
+dataset_id,Dataset ID,7362ef2d-7282-459f-bc1b-0347076fcc12
+resource_type,Resource Type,file.upload
+name,Resource Name,bgd_nhr_drought_barc.zip
+mimetype,MIME Type,application/zip
+size,Size,2.6M

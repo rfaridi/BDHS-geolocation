@@ -3,7 +3,7 @@
 ## Overview
 This repository contains the research, data pipelines, and spatial analysis linking Bangladesh Demographic and Health Survey (BDHS) geolocation data with high-resolution climate and environmental datasets. 
 
-The primary objective of this project is to investigate the relationship between historical climate variables (such as temperature, precipitation, and extreme weather events) and [Insert specific health outcomes, e.g., child mortality, infectious diseases, maternal health] across varying geographic clusters in Bangladesh.
+The primary objective of this project is to investigate the relationship between historical climate variables (such as temperature, precipitation, and extreme weather events) and  health outcomes, e.g., child mortality, nutritional status,  infectious diseases, maternal health across varying geographic clusters in Bangladesh.
 
 ## Data Sources
 * **Health & Demographic Data:** [The DHS Program](https://dhsprogram.com/) (BDHS datasets). Includes historical survey data linked to GPS clusters (villages/urban blocks).

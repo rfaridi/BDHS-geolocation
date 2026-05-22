@@ -1,0 +1,64 @@
+---
+title: "Data processing BDHS Geolocation"
+format: html
+---
+
+<!-- load the data -->
+
+```{r}
+load("../Data/Processed/flood_shp.rda")
+```
+
+
+
+```{r}
+glimpse(flood_sf)
+```
+
+```{r}
+# 1. Dynamically extract your factor levels
+categories <- str_to_sentence(levels(flood_sf$FLOODCAT_L))
+levels(flood_sf$FLOODCAT_L) <- categories
+
+
+# 2. Generate the base 'turbo' colors for all categories
+map_colors <- viridis::turbo(length(categories))
+names(map_colors) <- categories
+
+# 3. Override the "Not Flood Prone" category color
+# TIP: Pure "white" can make the map look like it has "holes" if the background is white. 
+# Using a very soft off-white like "#f5f5f5" or "grey96" keeps the country's shape intact.
+map_colors["Not flood prone"] <- "grey96" 
+
+# 4. Plot the updated map
+flood_cat_map <- ggplot(data = flood_sf) +
+  geom_sf(aes(fill = FLOODCAT_L), color = "black", linewidth = 0.05) +
+  
+  # Use manual scale with your custom color vector
+  scale_fill_manual(
+    values = map_colors,
+    na.translate = FALSE
+  ) +
+  #labs(title = "Flood categories in Bangladesh") +
+  theme_minimal() +
+  theme(
+    legend.position = "left",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 8),
+    legend.key.size = unit(0.2, "cm"), 
+    
+    # Completely clean map area
+    axis.text = element_blank(), 
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  ) +
+  guides(fill = guide_legend(nrow = 9, byrow = TRUE))
+print(flood_cat_map)
+```
+
+<!-- save the image -->
+
+```{r}
+ggsave(plot=flood_cat_map,filename= "../Data/Outputs/flood_cat_map.png")
+```
+
