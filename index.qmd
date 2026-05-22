@@ -1,5 +1,5 @@
 ---
-title: "BDHS and health outcomes"
+title: ""
 format: html
 fig-cap-location: top
 ---
