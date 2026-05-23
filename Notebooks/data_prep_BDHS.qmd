@@ -1,0 +1,39 @@
+---
+title: "Data Prep BDHS"
+format: html
+---
+
+
+# Set up
+
+<!-- set up stuffs -->
+
+```{r}
+library(tidyverse)
+library(sf)
+```
+
+
+# DHS 2022 GPS
+
+```{r}
+dhs_22_gps <- read_sf("../Data/Raw/DHS-2022-GPS/shapefile_2022/BDGE81FL.shp")
+```
+
+now have a look
+
+```{r}
+glimpse(dhs_22_gps)
+```
+
+The explantion of these variables are [here](../Data/Raw/DHS-2022-GPS/shapefile_2022/DHS_README.txt)
+
+
+# BD DHS 2022
+
+```{r}
+
+```
+
+
+
